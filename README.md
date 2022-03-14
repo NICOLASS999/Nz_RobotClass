@@ -11,8 +11,8 @@
 
 ## 文件目录
 - Nz_RobotClass Project
-  - Nz_RobotClass
-    代码。基于Platform IO。请自行了解相关知识。
-  - STPviewerSetup.exe
-    STP文件查看工具安装程序，用于创建和浏览.stp格式文件。
+  - Nz_RobotClass  
+代码。基于Platform IO。请自行了解相关知识。
+  - STPviewerSetup.exe  
+STP文件查看工具安装程序，用于创建和浏览.stp格式文件。
   - README.md
