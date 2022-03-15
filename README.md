@@ -11,6 +11,8 @@
 
 ## 文件目录
 - Nz_RobotClass Project
+  - .vscode  
+VSCode配置文件。
   - Nz_RobotClass  
 代码。基于Platform IO。请自行了解相关知识。
   - STPviewerSetup.exe  
