@@ -5,9 +5,12 @@
 #define Motor1_Pin_0 5
 #define Motor1_Pin_1 6
 
-#define Sensor0 
-#define Sensor1
-#define Sensor2
+
+// #define Sensor0 
+// #define Sensor1
+// #define Sensor2
+
+#define Sensor3_pin 14
 
 /*----------------------------------------------------------------
  * 直流电机驱动函数
@@ -53,6 +56,14 @@ void dc_motor_drive(direction, time) {
             digitalWrite(Motor1_Pin_1, LOW);
             delay(time);
         }
+        //停止
+        case stop:{
+            digitalWrite(Motor0_Pin_0, LOW);
+            digitalWrite(Motor0_Pin_1, LOW);
+            digitalWrite(Motor1_Pin_0, LOW);
+            digitalWrite(Motor1_Pin_1, LOW);
+            delay(time);
+        }
     }
 }
 
@@ -92,8 +103,18 @@ void setup() {
     // Motor1:
     pinMode(Motor1_Pin_0, OUTPUT);
     pinMode(Motor1_Pin_1, OUTPUT);
+    //Sensor3:
+    pinMode(Sensor3_pin, INPUT);
 }
 
 void loop() {
-    track();
+    //track();
+    delay(500);
+    if(!digitalRead(Sensor3_pin)){
+        dc_motor_drive(stop, 500);
+        dc_motor_drive(back, 1000);
+        dc_motor_drive(left, 500);
+    } else {
+        dc_motor_drive(front);
+    }
 }
